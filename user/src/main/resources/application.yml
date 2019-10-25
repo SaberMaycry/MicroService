@@ -1,0 +1,18 @@
+server:
+  port: 9999 # 启动端口
+  servlet:
+    context-path: /user # 启动服务前缀
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/annet_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: qqq111
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    # 2.0.0以上版本的spring boot实体的默认引擎为MyISAM，其不支持事务，需要配置引擎为为innoDB
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
